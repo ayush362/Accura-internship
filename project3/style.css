@@ -1,0 +1,602 @@
+/* Resetting the styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+body {
+    font-family: sans-serif;
+}
+/* Container of the page */
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes toptodown {
+    0% {
+        top: -300px;
+        opacity: 0;
+    }
+    50% {
+        top: 150px;
+        opacity: 0.5;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+/* Slider of the Hero Section */
+
+.header,
+.main-section {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Header */
+.header {
+    background-color: #ebe9e1;
+    color: #e43d12;
+}
+
+/* Div of the Header */
+.header-div {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+/* Image of the header */
+.header img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+/* Main section css */
+.main-section {
+    padding: 50px;
+    background-color: #ebe9e1;
+    color: #e43d12;
+}
+
+/* main Div of main section */
+.main-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main heading */
+.main-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 40px 0;
+}
+
+/* Slider of the main section */
+.slider-container {
+    min-height: 500px;
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* Arrow image */
+.arrow {
+    height: 150px;
+    cursor: pointer;
+}
+
+/* right arrow */
+.right {
+    transform: rotate(180deg);
+}
+
+/* Frame of the slider */
+.frame {
+    width: 800px;
+    height: 500px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: -1px 1px 10px 1px #e43d12;
+}
+
+/* div of the slider */
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slider.active {
+    animation: slideFade 1.5s ease-in-out;
+}
+
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Inner div of the slider */
+.slider-in {
+    width: 800px;
+    min-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+
+/* heading of the slider contenet */
+.slider-in h3 {
+    margin: 0 0 20px 0;
+    font-size: 2rem;
+    background: linear-gradient(90deg, #e43d12, #a53a1f, yellow, green);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Text of slider content */
+.slider-in p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: black;
+}
+
+/* image of the slider */
+.image {
+    width: 200px;
+    height: 200px;
+}
+.slider.clicked {
+    position: relative;
+    animation: toptodown 10s ease-out;
+}
+/* trying to do top down effect */
+@keyframes toptodown {
+    0% {
+        top: -300px;
+        opacity: 0;
+    }
+    50% {
+        top: 150px;
+        opacity: 0.5;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+/* Button Section */
+.button-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 60px 10px;
+}
+
+/* Primary button */
+.primary-btn {
+    color: black;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    transition: transform 0.5s, background-color 0.5s;
+}
+
+.primary-btn:hover {
+    background-color: blue;
+    transform: scale(1.1);
+}
+
+/* Rounded button styles */
+.rounded-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    margin: 20px 0;
+    letter-spacing: 0.1rem;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: transform 0.5s, background-color 0.5s;
+}
+
+.rounded-btn:hover {
+    background-color: blue;
+    transform: scale(1.1);
+}
+
+.rounded-btn button {
+    color: white;
+}
+
+.rounded-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.blue-btn {
+    background-color: lightblue;
+}
+
+.black-btn {
+    background-color: #e43d12;
+    color: white;
+}
+
+.green-btn {
+    background-color: green;
+}
+
+/* Product section */
+.product-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 50px;
+}
+
+/* Div of the product */
+.product-div {
+    width: 15%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4a4b48;
+    color: #e98074;
+    position: relative;
+    transition: transform 0.5s, background-color 0.5s, box-shadow 0.5s;
+}
+/* Hovering effect of the product div */
+.product-div:hover {
+    background-color: rgb(48, 48, 74);
+    box-shadow: 0 0 25px blue;
+    transform: scale(1.1);
+}
+/* Setting the after content of the product div */
+.product-div::after {
+    content: "Enquire Now";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+/* Setting the before content of the product div */
+.product-div::before {
+    position: absolute;
+    top: 70%;
+    content: "Essential tool for the work";
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+/* enabling visibility of before content of product div */
+.product-div:hover::before {
+    opacity: 1;
+}
+/* enabling visibilt of after content of product div */
+.product-div:hover::after {
+    opacity: 1;
+}
+
+/* Product container */
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Image of the product */
+.product-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.8s ease-in-out, top 0.8s ease-in-out,
+        left 0.8s ease-in-out, border-radius 0.8s ease-in-out;
+}
+/* Hovering effect of the image  */
+.product-div:hover img {
+    border-radius: 13px;
+    position: relative;
+    top: -60px;
+    left: -80px;
+    transform: scale(1.2);
+}
+
+/* About section */
+.about {
+    padding: 80px 40px;
+    margin: 50px 0;
+    background-color: #c5c1b1;
+    box-shadow: -1px 1px 10px 1px #e43d12;
+    transition: transform 0.5s;
+}
+/* Hover effect of the about section */
+.about:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out;
+}
+/* Youtube embeded of about section */
+.yt-video iframe {
+    width: 512px;
+}
+/* About Section Heading */
+.about-head {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 40px 0;
+    text-align: center;
+    background: linear-gradient(90deg, #e43d12, #a53a1f, yellow, green);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* right sided div of the about section */
+.about-div2 {
+    display: flex;
+    gap: 50px;
+    padding: 0 50px;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 50px 0;
+    background-color: #ebe9e1;
+}
+/* Main div of the footer */
+.footer-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* row 1 div of the footer */
+.footer-subdiv1 {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+/* sub div of row 1 of the footer */
+.footer-subdiv1 img {
+    width: 70px;
+    height: 70px;
+}
+/* Social media images inside the footer  */
+.footer-social-images img {
+    width: 30px;
+    height: 30px;
+}
+/* list of the footer in the row 2 */
+.footer-ul {
+    line-height: 2;
+    list-style: "→";
+}
+/* footer row 2 div */
+.footer-div2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* row 2 heading */
+.footer-div2 h4 {
+    font-weight: bold;
+    margin: 20px 0;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+/* Main Div 3 row 3 of the footer */
+.footer-maindiv3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+/* Div 3 row 3 of the footer */
+.footer-div3 {
+    display: flex;
+    /* justify-content: end; */
+    flex-direction: column;
+    gap: 20px;
+}
+/* subdiv of the footer row 3 div 3 */
+.footer-subdiv-3 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+/* inside div of the subdiv of the row 3 */
+.subdiv-3-1 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+/* Row 4 div 4 of the footer */
+.maps {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 1280px) {
+    .frame {
+        width: 700px;
+    }
+    .slider-in {
+        width: 700px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .frame {
+        width: 600px;
+    }
+    .slider-in {
+        width: 600px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .main-div {
+        width: 100%;
+    }
+    .slider-container {
+        width: 100%;
+    }
+    .frame {
+        width: 100%;
+    }
+    .arrow {
+        height: 145px;
+    }
+    .slider-in {
+        width: 500px;
+        flex-direction: column;
+        align-items: start;
+    }
+    .slider-in p {
+        width: 100%;
+        padding: 0 80px;
+    }
+    .product-div {
+        width: 20%;
+    }
+    .about-container {
+        padding: 0 20px;
+    }
+    .about:hover {
+        transform: scale(1);
+    }
+    .about-div2 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 888px) {
+        .arrow {
+            height: 80px;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .arrow {
+        height: 50px;
+    }
+    .footer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .slider-in p {
+        padding: 0 150px 0px 0px;
+    }
+}
+@media screen and (max-width: 612px) {
+    .arrow {
+        height: 20px;
+    }
+    .product-div {
+        width: 100%;
+    }
+    .yt-video {
+        width: 100%;
+    }
+    .yt-video iframe {
+        width: 100%;
+    }
+    .map {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 558px) {
+    .slider-in p {
+        padding: 0 200px 0px 0px;
+    }
+}
+@media screen and (max-width: 512px) {
+    .slider-in p {
+        padding: 0 250px 0px 0px;
+    }
+}
+@media screen and (max-width: 468px) {
+    .slider-container {
+        display: block;
+    }
+}
+@media screen and (max-width: 322px) {
+    .slider-in p,
+    .slider-in h3 {
+        font-size: 10px;
+        width: 80%;
+    }
+}
